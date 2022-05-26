@@ -1,12 +1,13 @@
-<h3>Create a new list</h3>
-
-<%= simple_form_for [@list] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <div class="form-input">
-    <%= f.input :name, placeholder: "Add a new name" %>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Create a new list</h3>
+        <%= simple_form_for [@list] do |f| %>
+          <%= f.input :name, placeholder: 'Drama' %>
+          <%= f.submit  class: 'btn btn-flat' %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div class="form-actions">
-    <%= f.submit "Create a list", class: "btn btn-primary" %>
-  </div>
-<% end %>
+</div>
