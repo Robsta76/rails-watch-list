@@ -8,17 +8,23 @@ class ListsController < ApplicationController
     @lists = List.new
   end
 
+  def show
+    @bookmarks = bookmarks.new
+  end
+
   def create
-
+    @lists = List.create(list_params)
+      if @list.save
+        redirect_to list_path(@list)
+        else
+          render :new
+      end
   end
 
-  def delete
-
+  def destroy
+    @list.destroy
+    redirect_to lists_path
   end
-
-
-
-
 
 
   private
