@@ -2,7 +2,7 @@
     <h1>Watch List Creator</h1>
 
     <div class="card-wrapper">
-      <%= @lists.each do |list| %>
+      <% @lists.each do |list| %>
         <%= link_to list.name, list_path(list) %>
       <% end %>
 

@@ -11,7 +11,7 @@ require 'json'
 def add_movies_to_db(movies_list)
   movies_list.each do |movie|
     p movie
-    Movie.create(title: movie['title'], overview: movie['overview'], poster_url: "https://image.tmdb.org/t/p/original/#
+    Movie.create!(title: movie['title'], overview: movie['overview'], poster_url: "https://image.tmdb.org/t/p/original/#
     {movie['poster_path']}", rating: movie ['vote_average'])
   end
 end
